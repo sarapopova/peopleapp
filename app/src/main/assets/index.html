@@ -1,0 +1,25 @@
+<html>
+<body>
+<h1>
+
+</h1>
+<button type="button">+Add List</button>
+<ul></ul>
+<script>
+   await fetch('https://random-data-api.com/api/v2/users')
+   .then(res => {
+    return res.json();
+   })
+   .then(data => {
+   data.forEach(user => {
+   const markup = '<li>${user.name}</li>';
+   const markup ='<li>${user.surname}</>li>';
+   const markup ='<li>${user.email}</>li>
+
+    document.querySelector('ul').insertAdjacentHTML (beforeend, markup);
+   });
+   .catch (error => console.log(error));
+</script>
+
+</body>
+</html>
